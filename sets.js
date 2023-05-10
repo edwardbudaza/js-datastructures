@@ -1,6 +1,6 @@
 // Sets
-
-function mySet() {
+class mySet {
+    constructor() {
     // the var collection will hold the set
     var collection = [];
     // this method will check for the presence of an element and return true or false
@@ -22,7 +22,7 @@ function mySet() {
     // this method will remove an element from a set
     this.remove = function(element) {
         if (this.has(element)) {
-            index  = collection.indexOf(element);
+            var index  = collection.indexOf(element);
             collection.splice(index, 1);
             return true;
         }
@@ -75,13 +75,16 @@ function mySet() {
         });
     };
 }
-var setA = new mySet();
-var setB = new mySet();
-setA.add("a");
-setB.add("b");
-setB.add("c");
-setB.add("a");
-setB.add("d");
-console.log(setA.subset(setB));
-console.log(setA.intersection(setB).values());
-console.log(setB.difference(setA).values());
+}
+
+module.exports = mySet;
+// var setA = new mySet();
+// var setB = new mySet();
+// setA.add("a");
+// setB.add("b");
+// setB.add("c");
+// setB.add("a");
+// setB.add("d");
+// console.log(setA.subset(setB));
+// console.log(setA.intersection(setB).values());
+// console.log(setB.difference(setA).values());
